@@ -38,7 +38,7 @@ pipeline
 				}				
 				else
 				{
-					Success "Pipeline Quality Gate Coverage Passed: $(qualitygate.status)"
+					success "Pipeline Quality Gate Coverage Passed: $(qualitygate.status)"
 				}
 			}
         }

@@ -28,17 +28,17 @@ pipeline
             steps 
             {
                 bat 'mvn sonar:sonar'
-            }
-			script
-			{
-				def qualitygate = waitforQualityGate()
-				if (qualitygate.status != "OK")
+				script
 				{
-					error "Pipeline aborted due to Quality Gate Coverage Failures: ${qualitygate.status}"
-				}				
-				else
-				{
-					success "Pipeline Quality Gate Coverage Passed: ${qualitygate.statu}"
+					def qualitygate = waitforQualityGate()
+					if (qualitygate.status != "OK")
+					{
+						error "Pipeline aborted due to Quality Gate Coverage Failures: ${qualitygate.status}"
+					}				
+					else
+					{
+						success "Pipeline Quality Gate Coverage Passed: ${qualitygate.statu}"
+					}
 				}
 			}
         }
